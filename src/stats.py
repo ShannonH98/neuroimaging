@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 def compute_basic_stats(data):
     return {
@@ -7,3 +8,10 @@ def compute_basic_stats(data):
         "min": np.min(data),
         "max": np.max(data)
     }
+
+def plot_histogram(data):
+    plt.hist(data.flatten(), bins=50)
+    plt.title("Voxel Intensity Distribution")
+    plt.xlabel("Intensity")
+    plt.ylabel("Frequency")
+    plt.show()
