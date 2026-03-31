@@ -1,10 +1,24 @@
-from src.loader import load_nifti
-from src.visualization import show_slice
-from src.stats import compute_basic_stats
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
 
-img, data = load_nifti("data/sample.nii")
+from nilearn import datasets
+from visualization import plot_brain, show_slice, browse_slices
+from stats import compute_basic_stats
 
-show_slice(data, slice_index=50)
+# Load sample brain
+img = datasets.load_mni152_template()
+data = img.get_fdata()
 
+# 1. Show middle slice
+middle_slice = data.shape[2] // 2
+show_slice(data, middle_slice)
+
+# 2. Show full brain
+plot_brain(img)
+
+browse_slices(data)
+
+# 3. Compute stats
 stats = compute_basic_stats(data)
-print(stats)
+print("Voxel stats:", stats)
