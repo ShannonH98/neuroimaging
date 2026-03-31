@@ -18,10 +18,15 @@ This repo is designed as a learning project for Python-based neuroimaging workfl
 ## Folder Structure
 neuroimaging/
 ├─ data/ # Optional: place your NIfTI (.nii) files here
+
 ├─ src/
+
 │ ├─ visualization.py # Functions for plotting & slice browsing
+
 │ ├─ processing.py # Functions for comparing brains
+
 └─ examples/
+
 └─ pipeline.py # Example script showing full workflow
 
 
