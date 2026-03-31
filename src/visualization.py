@@ -55,3 +55,4 @@ def browse_slices(data):
 
     fig.canvas.mpl_connect('key_press_event', on_key)
     plt.show()
+
